@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import styles from "./styles/storyTasks.module.css";
 import {
-    getTasksByStory,
     createTask,
     deleteTask,
     updateTask,
 } from "../../api/tasks";
-
+import { getTasksByStory } from "../../api/stories";
 import { TaskList } from "../tasks/TaskList";
 import { Modal } from "../ui/Modal";
 import { FormTask } from "../tasks/FormTask";

@@ -1,6 +1,6 @@
 import { FaProjectDiagram, FaLightbulb, FaClipboardList, FaTasks } from "react-icons/fa";
 
-import { LayoutDefault } from "../layouts/LayoutDefault";
+import { LayoutDefault } from "../layout/LayoutDefault";
 import { useAuth } from "../context/AuthContext";
 import styles from './styles/dashboard.module.css';
 

@@ -1,6 +1,5 @@
-import React from 'react';
-import { LayoutDefault } from '../Layout/LayoutDefault';
-import { useAuth } from '../auth/AuthProvider';
+import { LayoutDefault } from '../layout/LayoutDefault';
+import { useAuth } from '../context/AuthContext';
 
 export const Settings = () => {
     const {logout} = useAuth()

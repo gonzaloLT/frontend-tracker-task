@@ -1,6 +1,6 @@
-import { PublicLayout } from '../../Layout/PublicLayout'
+import { PublicLayout } from '../../layout/PublicLayout'
 import { RegisterForm } from '../../components/auth/RegisterForm'
-import { useAuth } from '../auth/AuthProvider'
+import { useAuth } from '../../context/AuthContext'
 import { Navigate } from 'react-router-dom'
 
 export const RegisterPage = () => {

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { PublicLayout } from "../layouts/PublicLayout"; 
+import { PublicLayout } from "../layout/PublicLayout"; 
 import styles from './styles/home.module.css';
 
 export const HomePage = () => {

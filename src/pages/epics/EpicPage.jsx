@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { IoArrowBack } from 'react-icons/io5';
 
-import { LayoutDefault } from "../../layouts/LayoutDefault";
+import { LayoutDefault } from "../../layout/LayoutDefault";
 import { getEpic, getStoriesByEpic } from "../../api/epics"; 
 
 import { EpicInfo } from "../../components/epics/EpicInfo";

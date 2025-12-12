@@ -1,7 +1,7 @@
-import { Navigate, useNavigate } from 'react-router-dom';
-import { PublicLayout } from '../../Layout/PublicLayout'
+import { Navigate } from 'react-router-dom';
+import { PublicLayout } from '../../layout/PublicLayout'
 import { LoginForm } from '../../components/auth/LoginForm';
-import { useAuth } from '../auth/AuthProvider';
+import { useAuth } from '../../context/AuthContext';
 
 export const LoginPage = () => {
     const auth = useAuth()
