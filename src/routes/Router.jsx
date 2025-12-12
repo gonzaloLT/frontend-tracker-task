@@ -71,6 +71,10 @@ const router = createBrowserRouter([
                 element: <StoriesPage />,
             },
             {
+                path: "/my-stories/:storyId",
+                element: <StoryPage />,
+            },
+            {
                 path: "/settings",
                 element: <Settings />,
             }
