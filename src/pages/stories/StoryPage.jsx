@@ -8,7 +8,6 @@ import { getStory } from "../../api/stories";
 import { LoadingMessage } from "../../components/ui/LoadingMessage";
 import { ErrorMessage } from "../../components/ui/ErrorMessage";
 import { StoryInfo } from "../../components/stories/StoryInfo";
-import { StoryDates } from "../../components/stories/StoryDates";
 import { StoryTasks } from "../../components/stories/StoryTasks";
 
 import styles from './styles/story.module.css';
@@ -74,11 +73,6 @@ export const StoryPage = () => {
                 
                 <div className={styles.storyContainer}>
                     <StoryInfo story={story} />
-                    
-                    <StoryDates 
-                        createdAt={story.createdAt} 
-                        updatedAt={story.updatedAt} 
-                    />
                     
                     <StoryTasks storyId={storyId} />
                 </div>

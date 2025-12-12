@@ -1,16 +1,11 @@
 import { useForm } from 'react-hook-form';
 import styles from '../tasks/styles/form.module.css';
 
-export const FormProject = ({ onProjectCreated, isSubmitting }) => {
+export const FormStory = ({ onStoryCreated, isSubmitting }) => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const onSubmit = (data) => {
-        const projectData = {
-            ...data,
-            icon: data.icon ? data.icon : undefined 
-        };
-
-        onProjectCreated(projectData);
+        onStoryCreated(data);
         reset();
     };
 
@@ -18,13 +13,13 @@ export const FormProject = ({ onProjectCreated, isSubmitting }) => {
         <div className={styles.formContainer}>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className={styles.formGroup}>
-                    <label className={styles.label}>Título del Proyecto</label>
+                    <label className={styles.label}>Nombre de la Historia</label>
                     <input
                         className={styles.input}
                         type="text"
-                        {...register('title', { required: 'El título es obligatorio' })}
+                        {...register('name', { required: 'El nombre es obligatorio' })}
                     />
-                    {errors.title && <p className={styles.errorMessage}>{errors.title.message}</p>}
+                    {errors.name && <p className={styles.errorMessage}>{errors.name.message}</p>}
                 </div>
 
                 <div className={styles.formGroup}>
@@ -36,17 +31,16 @@ export const FormProject = ({ onProjectCreated, isSubmitting }) => {
                 </div>
 
                 <div className={styles.formGroup}>
-                    <label className={styles.label}>Icono (Emoji)</label>
-                    <input
-                        className={styles.input}
-                        type="text"
-                        placeholder="📁"
-                        {...register('icon')}
-                    />
+                    <label className={styles.label}>Estado Inicial</label>
+                    <select className={styles.input} {...register('status')}>
+                        <option value="Pendiente">Pendiente</option>
+                        <option value="En progreso">En progreso</option>
+                        <option value="Completado">Completado</option>
+                    </select>
                 </div>
 
                 <button className={styles.submitButton} type="submit" disabled={isSubmitting}>
-                    {isSubmitting ? 'Creando...' : 'Crear Proyecto'}
+                    {isSubmitting ? 'Creando...' : 'Crear Historia'}
                 </button>
             </form>
         </div>

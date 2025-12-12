@@ -68,12 +68,11 @@ export const ProjectsPage = () => {
     return (
         <LayoutDefault>
             <div className={styles.pageContainer}>
-                {/* Cabecera con Título y Botón */}
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+                <div className={styles.header}>
                     <h1 className={styles.pageTitle}>Mis proyectos</h1>
+
                     <button 
-                        className={styles.createButton} // Asegúrate de tener estilos para esto o usa un estilo en línea
-                        style={{ padding: '10px 20px', backgroundColor: '#3498db', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+                        className={styles.createButton}
                         onClick={() => setIsCreating(true)}
                     >
                         + Nuevo Proyecto
@@ -90,7 +89,6 @@ export const ProjectsPage = () => {
                     )}
                 </div>
 
-                {/* Modal de Creación */}
                 <Modal
                     title="Crear Proyecto"
                     isOpen={isCreating}

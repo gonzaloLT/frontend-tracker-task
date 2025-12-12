@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import styles from "./styles/storyTasks.module.css";
 import {
     createTask,
     deleteTask,
@@ -10,6 +9,8 @@ import { TaskList } from "../tasks/TaskList";
 import { Modal } from "../ui/Modal";
 import { FormTask } from "../tasks/FormTask";
 import { EditTask } from "../tasks/EditTask";
+
+import styles from "./styles/storyTasks.module.css";
 
 export const StoryTasks = ({ storyId }) => {
     const [tasks, setTasks] = useState([]);

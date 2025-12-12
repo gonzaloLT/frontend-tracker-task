@@ -4,14 +4,40 @@
   padding: 2rem;
 }
 
+/* --- Nuevas clases extraídas --- */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #3182ce; /* El borde pasa al contenedor completo */
+  padding-bottom: 1rem;
+}
+
+.createButton {
+  padding: 0.6rem 1.2rem; /* ~10px 20px */
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.createButton:hover {
+  background-color: #2980b9; /* Azul un poco más oscuro para hover */
+}
+
+/* ----------------------------- */
+
 .pageTitle {
   font-size: 2.5rem;
   font-weight: bold;
   color: #1f2937;
-  margin-bottom: 2rem;
-  text-align: center;
-  border-bottom: 2px solid #3182ce;
-  padding-bottom: 0.5rem;
+  margin: 0; /* Quitamos márgenes para que se alinee bien en el flex */
 }
 
 .projectsList {
@@ -52,6 +78,13 @@
       padding: 1rem;
   }
 
+  /* Ajuste para móviles: título arriba, botón abajo */
+  .header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+  }
+
   .pageTitle {
       font-size: 2rem;
   }
@@ -59,5 +92,9 @@
   .projectsList {
       grid-template-columns: 1fr;
       padding: 1rem;
+  }
+  
+  .createButton {
+      width: 100%; /* Botón ancho completo en móvil */
   }
 }
