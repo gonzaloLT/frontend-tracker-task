@@ -1,7 +1,7 @@
-import React from "react";
-import { LayoutDefault } from "../Layout/LayoutDefault";
-import { useAuth } from "../auth/AuthProvider";
 import { FaProjectDiagram, FaLightbulb, FaClipboardList, FaTasks } from "react-icons/fa";
+
+import { LayoutDefault } from "../layouts/LayoutDefault";
+import { useAuth } from "../context/AuthContext";
 import styles from './styles/dashboard.module.css';
 
 export const Dashboard = () => {
@@ -18,7 +18,7 @@ export const Dashboard = () => {
         <LayoutDefault>
             <div className={styles.dashboardContainer}>
                 <header className={styles.dashboardHeader}>
-                    <h1>Bienvenido, {user?.name.first} {user?.name.last}</h1>
+                    <h1>Bienvenido, {user?.name?.first} {user?.name?.last}</h1>
                     <p>Gestiona tus proyectos de manera eficiente</p>
                 </header>
 

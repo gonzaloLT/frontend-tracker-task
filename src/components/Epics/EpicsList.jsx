@@ -1,6 +1,5 @@
-import React from 'react'
-import styles from './styles/epicsList.module.css'
 import { EpicCard } from './EpicCard'
+import styles from './styles/epicsList.module.css'
 
 export const EpicsList = ({ epics }) => (
     <div className={styles.epics}>

@@ -1,33 +1,46 @@
-import { createBrowserRouter } from 'react-router-dom'
-import { Home } from "../pages/Home";
-import { Projects } from "../pages/Projects";
-import { ProjectDetails } from "../pages/ProjectDetails";
-import { MyStory } from "../pages/MyStory";
-import { Epic } from "../pages/Epic";
-import { Story } from "../pages/Story";
-import { Settings } from "../pages/Settings";
-import { Login } from '../pages/Login';
-import { Signup } from '../pages/Signup';
-import { ProtectedRoute } from '../pages/ProtectedRoute';
+import { createBrowserRouter } from 'react-router-dom';
+
+//Vistas Públicas
+import { HomePage } from "../pages/HomePage"; 
+import { LoginPage } from '../pages/auth/LoginPage';
+import { RegisterPage } from '../pages/auth/RegisterPage';
+
+//Vistas Privadas
 import { Dashboard } from '../pages/Dashboard';
-import { AuthRoute } from '../pages/AuthRoute';
+import { ProjectsPage } from "../pages/projects/ProjectsPage";
+import { ProjectPage } from "../pages/projects/ProjectPage";
+import { EpicPage } from "../pages/epics/EpicPage";
+import { StoryPage } from "../pages/stories/StoryPage";
+import { StoriesPage } from "../pages/stories/StoriesPage";
+import { Settings } from "../pages/Settings";
+
+import { ProtectedRoute } from '../components/routes/ProtectedRoute';
+import { PublicRoute } from '../components/routes/PublicRoute';
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: (
-            <AuthRoute >
-                <Home />
-            </AuthRoute>
+            <PublicRoute>
+                <HomePage />
+            </PublicRoute>
         ),
     },
     {
         path: "/login",
-        element: <Login />
+        element: (
+            <PublicRoute>
+                <LoginPage />
+            </PublicRoute>
+        )
     },
     {
         path: '/signup',
-        element: <Signup />
+        element: (
+            <PublicRoute>
+                <RegisterPage />
+            </PublicRoute>
+        )
     },
     {
         path: '/',
@@ -39,23 +52,23 @@ const router = createBrowserRouter([
             },
             {
                 path: "/my-projects",
-                element: <Projects />,
+                element: <ProjectsPage />,
             },
             {
                 path: "/my-projects/:projectId",
-                element: <ProjectDetails />,
+                element: <ProjectPage />,
             },
             {
                 path: "/my-projects/:projectId/:epicId",
-                element: <Epic />,
+                element: <EpicPage />,
             },
             {
                 path: "/my-projects/:projectId/:epicId/:storyId",
-                element: <Story />,
+                element: <StoryPage />,
             },
             {
                 path: "/my-stories",
-                element: <MyStory />,
+                element: <StoriesPage />,
             },
             {
                 path: "/settings",
