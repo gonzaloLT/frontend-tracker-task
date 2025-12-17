@@ -12,7 +12,7 @@ export const Settings = () => {
         <LayoutDefault>
             <div>
                     <p>¿Quieres cerrar sesion?</p>
-                    <button type='submit' onClick={logout}>Cerrar sesion</button>
+                    <button type='submit' onClick={handleSubmit}>Cerrar sesion</button>
             </div>
         </LayoutDefault>
     );

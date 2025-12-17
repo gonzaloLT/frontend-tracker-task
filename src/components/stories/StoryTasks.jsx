@@ -29,7 +29,6 @@ export const StoryTasks = ({ storyId }) => {
             setTasks(res.data.tasks || []);
         } catch (error) {
             console.error(error);
-            // Opcional: Podrías poner un estado de error local aquí si quieres
         } finally {
             setLoading(false);
         }
@@ -52,9 +51,8 @@ export const StoryTasks = ({ storyId }) => {
     const handleCreatedTask = async (taskData) => {
         setIsSubmitting(true);
         try {
-            // Nota: Aquí no necesitas desempaquetar porque no usas el retorno para renderizar
             await createTask({ ...taskData, story: storyId });
-            await fetchTasks(); // Recarga la lista limpia
+            await fetchTasks();
             handleCloseModal();
         } catch (error) {
             console.error(error);
@@ -95,7 +93,6 @@ export const StoryTasks = ({ storyId }) => {
         }
     };
 
-    // ... El return se mantiene igual, solo asegúrate de que TaskList reciba el array
     return (
         <div className={styles.tasksContainer}>
             <div className={styles.taskHeader}>
@@ -121,7 +118,6 @@ export const StoryTasks = ({ storyId }) => {
                 <p className={styles.noTasks}>No hay tareas en esta historia</p>
             )}
 
-            {/* Modales... (Se mantienen igual) */}
             <Modal
                 title={"Crear Tarea"}
                 isOpen={isCreatingTask}
