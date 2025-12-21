@@ -1,9 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-    createTask,
-    deleteTask,
-    updateTask,
-} from "../../api/tasks";
+import { createTask, deleteTask, updateTask } from "../../api/tasks";
 import { getTasksByStory } from "../../api/stories";
 import { TaskList } from "../tasks/TaskList";
 import { Modal } from "../ui/Modal";
@@ -35,10 +31,14 @@ export const StoryTasks = ({ storyId }) => {
     };
 
     useEffect(() => {
-        if (storyId) fetchTasks();
+        if (storyId) {
+            fetchTasks();
+        }
     }, [storyId]);
 
-    const handleCreateTaskClick = () => setIsCreatingTask(true);
+    const handleCreateTaskClick = () => {
+        setIsCreatingTask(true);
+    };
 
     const handleCloseModal = () => {
         if (!isSubmitting) {
